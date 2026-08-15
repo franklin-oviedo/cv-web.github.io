@@ -27,7 +27,7 @@ function generarCV(e) {
   resultadoDiv.appendChild(titulo);
 
   const datos = [
-    { label: "Nombre", value: nombre },
+    { label: "Nombre y Apellido", value: nombre },
     { label: "Email", value: email },
     { label: "Experiencia", value: experiencia },
     { label: "Educación", value: educacion }
