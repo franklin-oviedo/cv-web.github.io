@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: SonarQube Scan
-      uses: sonarsource/sonarcloud-github-action@main
+      uses: sonarsource/sonarcloud-github-action@master
       with:
         args: >
           -Dsonar.projectKey=franklin-oviedo_cv-web.github.io 
