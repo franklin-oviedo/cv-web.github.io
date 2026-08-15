@@ -12,10 +12,10 @@ jobs:
       uses: actions/checkout@v3
 
     - name: SonarQube Scan
-      uses: sonarsource/sonarcloud-github-action@master
+      uses: sonarsource/sonarcloud-github-action@main
       with:
         args: >
-          -Dsonar.projectKey=franklin-oviedo_cv-web.github.io
+          -Dsonar.projectKey=franklin-oviedo_cv-web.github.io 
           -Dsonar.organization=franklin-oviedo
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
