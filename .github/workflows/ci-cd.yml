@@ -42,3 +42,4 @@ jobs:                             # Definición de los jobs (tareas)
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}   # Token con permisos de escritura
         publish_dir: ./                             # Carpeta que se publica (raíz del repo)
+        force_orphan: true   # ✅ fuerza un commit limpio en gh-pages
