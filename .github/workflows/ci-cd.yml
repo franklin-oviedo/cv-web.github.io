@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # actualizado a la última versión estable
+      with:
+        fetch-depth: 0 # necesario para que SonarCloud tenga todo el historial
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v2
@@ -22,7 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # también actualizado
+      with:
+        fetch-depth: 0
 
     - name: Deploy a GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
