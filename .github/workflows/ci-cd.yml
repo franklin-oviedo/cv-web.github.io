@@ -8,7 +8,7 @@ permissions:                      # Configuración de permisos para el GITHUB_TO
   contents: write                 # Permite al bot hacer push a la rama gh-pages
 
 jobs:                             # Definición de los jobs (tareas)
-  quality-check:                  # Primer job: análisis de calidad
+  quality-check-sonarq:           # Primer job: análisis de calidad
     runs-on: ubuntu-latest        # Se ejecuta en un runner Ubuntu
     steps:                        # Lista de pasos dentro del job
     - name: Checkout código       # Paso 1: clona el repo en el runner
@@ -28,8 +28,8 @@ jobs:                             # Definición de los jobs (tareas)
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    # Token de GitHub para autenticación
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}      # Token de SonarCloud para subir resultados
 
-  deploy:                         # Segundo job: despliegue en GitHub Pages
-    needs: quality-check          # Solo se ejecuta si el job quality-check termina bien
+  deploy-page:                         # Segundo job: despliegue en GitHub Pages
+    needs: quality-check-sonarq          # Solo se ejecuta si el job quality-check termina bien
     runs-on: ubuntu-latest        # Se ejecuta en un runner Ubuntu
     steps:                        # Lista de pasos dentro del job
     - name: Checkout código       # Paso 1: clona el repo en el runner
